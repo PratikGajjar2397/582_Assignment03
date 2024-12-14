@@ -1,0 +1,58 @@
+<diagram program="umletino" version="15.1"><zoom_level>14</zoom_level><element><id>UMLClass</id><coordinates><x>364</x><y>0</y><w>294</w><h>182</h></coordinates><panel_attributes>StackIterator
+--
+- stcak: Stack*
+- currentPosition: Size_t
+--
++ StackIterator(stack: Stack*)
++ hasNext(): bool
++ hasNext(): void*
++ reset(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>280</x><y>266</y><w>434</w><h>336</h></coordinates><panel_attributes>Stack
+--
+- currecntChunk: Chunk*
+- freeChunks: Chunk*
+- currentIndex: size_t
+- chunkElemMax: size_t
+- elemSize: size_t
+- totalElements: size_t
+--
++ getLastElement(): void*
++ push(elem: void*): void
++ pop(): void*
++ isEmpty(): bool
++ size(): size_t
++ clear(): void
++ shrinkToFit(): void
++ reserveCapacity(newCapacity: size_t): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>742</y><w>294</w><h>140</h></coordinates><panel_attributes>Chunk
+--
++ Chunk(size: size_t)
++ isFull(): bool
++ getDataAt(index: size_t): void*
++ resize(newSize: size_t): void
++ copyData(source: Chunk*): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>574</x><y>742</y><w>112</w><h>56</h></coordinates><panel_attributes>Logger
+--
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>84</x><y>952</y><w>294</w><h>140</h></coordinates><panel_attributes>Memory Manager
+--
++ allocate(size: size_t): Chunk*
++ deallocate(chunk: chunk*): void
++ getTotalAllocated(): size_t
++ checkMemoryHealth(): bool
++ optimizeMemory(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>896</y><w>434</w><h>196</h></coordinates><panel_attributes>PerformanceMonitor
+--
+- stack: Stack*
+- operationCount: size_t
+--
++ PerformanceMonitor(stack: Stack*)
++ startMonitoring(): void
++ stopMonitoring(): void
++ getReport(): string
++ resetCounters(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>476</x><y>168</y><w>98</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+iterates</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>196</x><y>588</y><w>196</w><h>182</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+contains</panel_attributes><additional_attributes>10;110;120;10</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>588</y><w>98</w><h>182</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+logs</panel_attributes><additional_attributes>50;110;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>644</x><y>588</y><w>196</w><h>336</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+monitors</panel_attributes><additional_attributes>10;10;120;220</additional_attributes></element><element><id>Relation</id><coordinates><x>602</x><y>784</y><w>182</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+logs performance</panel_attributes><additional_attributes>10;80;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>168</x><y>868</y><w>112</w><h>112</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+allocates</panel_attributes><additional_attributes>10;60;20;10</additional_attributes></element><element><id>Relation</id><coordinates><x>322</x><y>588</y><w>168</w><h>392</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes><additional_attributes>10;260;84;135;100;10</additional_attributes></element></diagram>
